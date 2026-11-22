@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Aplikasi Login dan Register dengan LocalStorage">
+
+    <title>MyLogin - Aplikasi Login</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <!-- HALAMAN LOGIN -->
+        <section class="card" id="authCard">
+
+            <h1>MyLogin</h1>
+            <p class="subtitle">
+                Selamat datang! Silakan masuk ke akun Anda.
+            </p>
+
+            <!-- FORM LOGIN -->
+            <div id="loginForm">
+
+                <h2>Login Akun</h2>
+
+                <input
+                    type="text"
+                    id="loginUser"
+                    placeholder="Masukkan Username"
+                    autocomplete="username"
+                    required
+                >
+
+                <input
+                    type="password"
+                    id="loginPass"
+                    placeholder="Masukkan Password"
+                    autocomplete="current-password"
+                    required
+                >
+
+                <button type="button" onclick="login()">
+                    Masuk Sekarang
+                </button>
+
+                <p>
+                    Belum punya akun?
+                    <a onclick="showRegister()">Daftar di sini</a>
+                </p>
+
+            </div>
+
+            <!-- FORM REGISTER -->
+            <div id="registerForm" class="hidden">
+
+                <h2>Buat Akun Baru</h2>
+
+                <input
+                    type="text"
+                    id="regUser"
+                    placeholder="Buat Username"
+                    autocomplete="username"
+                    required
+                >
+
+                <input
+                    type="password"
+                    id="regPass"
+                    placeholder="Buat Password (minimal 6 karakter)"
+                    autocomplete="new-password"
+                    required
+                >
+
+                <button type="button" onclick="register()">
+                    Daftar Sekarang
+                </button>
+
+                <p>
+                    Sudah punya akun?
+                    <a onclick="showLogin()">Login di sini</a>
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- HALAMAN DASHBOARD -->
+        <section class="card hidden" id="dashboard">
+
+            <h1>Dashboard</h1>
+
+            <p class="subtitle">
+                Selamat datang kembali!
+            </p>
+
+            <h2>
+                Halo,
+                <span id="welcomeUser">Pengguna</span>!
+            </h2>
+
+            <div class="info">
+                <h3>Status Akun</h3>
+
+                <p>
+                    Anda berhasil login ke aplikasi.
+                </p>
+
+                <p>
+                    Data tersimpan menggunakan LocalStorage.
+                </p>
+            </div>
+
+            <button
+                type="button"
+                class="logout"
+                onclick="logout()"
+            >
+                Keluar dari Akun
+            </button>
+
+        </section>
+
+    </main>
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+</html>
